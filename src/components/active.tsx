@@ -84,10 +84,11 @@ export default function Active({ width }: { width: string }) {
             bottom: 5,
           }}
         >
+          <Tooltip />
           <CartesianGrid strokeDasharray="0 0" stroke="#e8e8e8" />
           <XAxis dataKey="name" tick={{ fill: '#A5A3AE' }} stroke="#A5A3AE" />
           <YAxis tick={{ fill: '#A5A3AE' }} stroke="#A5A3AE" />
-          <Bar dataKey="pv" fill="#4078BC" barSize={16.84} radius={10} />
+          <Bar dataKey="pv" fill="#d3e0ea" barSize={16.84} radius={10} />
         </BarChart>
       </ResponsiveContainer>
     </div>
