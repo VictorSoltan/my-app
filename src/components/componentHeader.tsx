@@ -12,7 +12,11 @@ export default function ComponentHeader({
   setDropDown?: any;
 }) {
   return (
-    <header className="flex justify-between mt-4 px-6 pr-2">
+    <header
+      className={`${
+        fontSize ? 'mt-2 mb-2' : 'mt-4'
+      } flex justify-between  px-6 pr-2`}
+    >
       <h3
         className="m-0"
         style={{

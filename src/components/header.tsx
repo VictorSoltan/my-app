@@ -18,7 +18,7 @@ export default function Header() {
     },
   ];
 
-  const buttons = [Gear, Pdf];
+  const buttons = [Pdf, Gear];
   return (
     <div className="flex items-center justify-between shrink-0 w-[1155px] h-[87px] relative mt-12">
       <div

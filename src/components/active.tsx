@@ -69,6 +69,7 @@ export default function Active({ width }: { width: string }) {
       }}
     >
       <ComponentHeader
+        fontSize="15px"
         title={'Bot most active weekdays'}
         dropDownActive={dropDown}
         setDropDown={setDropDown}

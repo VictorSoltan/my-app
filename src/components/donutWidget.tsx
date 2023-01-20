@@ -57,7 +57,7 @@ export default function donutWidget({ data }: { data: any }) {
             lineWidth={30}
             paddingAngle={0}
           />
-          <div className="absolute top-[30.4%] border-[1px] border-[#D9E1E7] rounded-[100%] p-[20%] flex flex-col justify-center items-center w-[80px] h-[80px]">
+          <div className="absolute top-[28.3%] border-[1px] border-[#D9E1E7] rounded-[100%] p-[20%] flex flex-col justify-center items-center w-[80px] h-[80px]">
             <h1
               style={{
                 font: "700 36px/18px 'Montserrat', sans-serif",

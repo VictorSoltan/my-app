@@ -134,12 +134,14 @@ const data = [
 ];
 
 export default function ChartArea({
+  fontSize,
   title,
   leftLabel,
   bottomLabel,
   width,
   height,
 }: {
+  fontSize?: string;
   title: string;
   leftLabel: string;
   bottomLabel?: string;
@@ -159,6 +161,7 @@ export default function ChartArea({
       }}
     >
       <ComponentHeader
+        fontSize={fontSize}
         title={title}
         dropDownActive={dropDown}
         setDropDown={setDropDown}

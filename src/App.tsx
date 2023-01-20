@@ -117,6 +117,7 @@ function App() {
         <SimpleWordCloud />
         <div className="flex justify-between w-full">
           <ChartArea
+            fontSize="15px"
             title={'Bot Most Active Hours'}
             leftLabel={'Users'}
             width={'60%'}
