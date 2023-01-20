@@ -61,7 +61,7 @@ export default function websitesWidget({ width }: { width: string }) {
         dropDownActive={dropDown}
         setDropDown={setDropDown}
       />
-      <ResponsiveContainer width="100%" height="80%">
+      <ResponsiveContainer width="98%" height="80%">
         <ComposedChart
           layout="vertical"
           width={600}
@@ -75,8 +75,14 @@ export default function websitesWidget({ width }: { width: string }) {
           }}
         >
           <CartesianGrid stroke="#f5f5f5" />
-          <XAxis type="number" />
-          <YAxis dataKey="name" type="category" scale="band" />
+          <XAxis type="number" tick={{ fill: '#C0C7CE' }} stroke="#C0C7CE" />
+          <YAxis
+            dataKey="name"
+            type="category"
+            scale="band"
+            tick={{ fill: '#C0C7CE' }}
+            stroke="#C0C7CE"
+          />
           <Tooltip />
           <Bar dataKey="pv" barSize={20} radius={3} fill="#4078BC" />
         </ComposedChart>

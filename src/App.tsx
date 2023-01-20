@@ -109,6 +109,8 @@ function App() {
         <KindsOfEvents />
         <ChartArea
           title={'Conversation Length'}
+          leftLabel={'Conversions'}
+          bottomLabel={'Events'}
           width={'100%'}
           height={'383px'}
         />
@@ -116,6 +118,7 @@ function App() {
         <div className="flex justify-between w-full">
           <ChartArea
             title={'Bot Most Active Hours'}
+            leftLabel={'Users'}
             width={'60%'}
             height={'255px'}
           />

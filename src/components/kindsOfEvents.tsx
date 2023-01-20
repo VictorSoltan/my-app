@@ -75,7 +75,7 @@ export default function KindsOfEvents() {
           color: '#4179bd',
         },
         {
-          title: 'Analytics',
+          title: 'No Dialogplan',
           color: '#B43DAF',
         },
       ],
@@ -85,7 +85,7 @@ export default function KindsOfEvents() {
 
   return (
     <div
-      className="kinds bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-4 w-[1155px] h-[383px] relative"
+      className="kinds bg-light-solidcolor-extra-cardbackground shrink-0 mt-4 w-[1155px] h-[383px] relative"
       style={{
         boxShadow:
           'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
@@ -149,7 +149,7 @@ export default function KindsOfEvents() {
         ))}
       </div>
 
-      <svg className="absolute" width="100%" height="100%">
+      {/* <svg className="absolute" width="100%" height="100%">
         <defs>
           <filter x="0" y="0" width="1" height="1" id="solid">
             <feFlood flood-color="white" result="bg" />
@@ -159,7 +159,7 @@ export default function KindsOfEvents() {
             </feMerge>
           </filter>
         </defs>
-      </svg>
+      </svg> */}
     </div>
   );
 }

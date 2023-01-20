@@ -14,43 +14,43 @@ import {
 
 const data = [
   {
-    name: 'Page A',
+    name: 'Mon',
     uv: 4000,
     pv: 2400,
     amt: 2400,
   },
   {
-    name: 'Page B',
+    name: 'Tue',
     uv: 3000,
     pv: 1398,
     amt: 2210,
   },
   {
-    name: 'Page C',
+    name: 'Wen',
     uv: 2000,
     pv: 9800,
     amt: 2290,
   },
   {
-    name: 'Page D',
+    name: 'Thu',
     uv: 2780,
     pv: 3908,
     amt: 2000,
   },
   {
-    name: 'Page E',
+    name: 'Fri',
     uv: 1890,
     pv: 4800,
     amt: 2181,
   },
   {
-    name: 'Page F',
+    name: 'Sat',
     uv: 2390,
     pv: 3800,
     amt: 2500,
   },
   {
-    name: 'Page G',
+    name: 'Sun',
     uv: 3490,
     pv: 4300,
     amt: 2100,
@@ -83,9 +83,9 @@ export default function Active({ width }: { width: string }) {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="0 0" />
-          <XAxis dataKey="name" />
-          <YAxis />
+          <CartesianGrid strokeDasharray="0 0" stroke="#e8e8e8" />
+          <XAxis dataKey="name" tick={{ fill: '#A5A3AE' }} stroke="#A5A3AE" />
+          <YAxis tick={{ fill: '#A5A3AE' }} stroke="#A5A3AE" />
           <Bar dataKey="pv" fill="#4078BC" barSize={16.84} radius={10} />
         </BarChart>
       </ResponsiveContainer>

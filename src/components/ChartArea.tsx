@@ -12,48 +12,137 @@ import ComponentHeader from './componentHeader';
 
 const data = [
   {
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: 3,
+    uv: 30,
   },
   {
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: 5,
+    uv: 30,
   },
   {
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: 7,
+    uv: 28,
   },
   {
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: 9,
+    uv: 27,
   },
   {
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    name: 11,
+    uv: 29,
   },
   {
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    name: 13,
+    uv: 27,
   },
   {
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    name: 15,
+    uv: 28,
+  },
+  {
+    name: 17,
+    uv: 30,
+  },
+  {
+    name: 19,
+    uv: 30,
+  },
+  {
+    name: 21,
+    uv: 28,
+  },
+  {
+    name: 23,
+    uv: 27,
+  },
+  {
+    name: 25,
+    uv: 29,
+  },
+  {
+    name: 27,
+    uv: 29,
+  },
+  {
+    name: 29,
+    uv: 28,
+  },
+  {
+    name: 31,
+    uv: 30,
+  },
+  {
+    name: 33,
+    uv: 30,
+  },
+  {
+    name: 35,
+    uv: 28,
+  },
+  {
+    name: 37,
+    uv: 27,
+  },
+  {
+    name: 39,
+    uv: 32,
+  },
+  {
+    name: 41,
+    uv: 28,
+  },
+  {
+    name: 43,
+    uv: 28,
+  },
+  {
+    name: 45,
+    uv: 29,
+  },
+  {
+    name: 47,
+    uv: 27,
+  },
+  {
+    name: 49,
+    uv: 28,
+  },
+  {
+    name: 51,
+    uv: 30,
+  },
+  {
+    name: 53,
+    uv: 30,
+  },
+  {
+    name: 55,
+    uv: 28,
+  },
+  {
+    name: 57,
+    uv: 27,
+  },
+  {
+    name: 59,
+    uv: 29,
+  },
+  {
+    name: 61,
+    uv: 38,
   },
 ];
 
 export default function ChartArea({
   title,
+  leftLabel,
+  bottomLabel,
   width,
   height,
 }: {
   title: string;
+  leftLabel: string;
+  bottomLabel?: string;
   width: string;
   height: string;
 }) {
@@ -61,7 +150,7 @@ export default function ChartArea({
 
   return (
     <div
-      className="bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-4 relative"
+      className="bg-light-solidcolor-extra-cardbackground shrink-0 mt-4 relative"
       style={{
         width: width,
         height: height,
@@ -74,29 +163,52 @@ export default function ChartArea({
         dropDownActive={dropDown}
         setDropDown={setDropDown}
       />
-      <ResponsiveContainer className="mt-[1%]" width="100%" height="69%">
-        <AreaChart
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
+      <div className="flex h-[67%] relative items-center ">
+        <label
+          style={{
+            font: "400 18px/34px 'Montserrat', sans-serif",
+            color: '#7D7E80',
+            transform: 'rotate(-90deg)',
           }}
+          className="flex m-auto ml-4 mt-[6%] w-3 absolute"
         >
-          <CartesianGrid stroke="#f5f5f5" strokeDasharray="0 0" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Area
-            type="monotone"
-            dataKey="uv"
-            stroke="#4078BC"
-            strokeWidth={3}
-            fill="#f2f6fa"
-          />
-        </AreaChart>
-      </ResponsiveContainer>
+          {leftLabel}
+        </label>
+        <ResponsiveContainer className="mt-[1%] ml-4" width="98%" height="100%">
+          <AreaChart
+            data={data}
+            margin={{
+              top: 10,
+              right: 30,
+              left: 0,
+              bottom: 0,
+            }}
+          >
+            <CartesianGrid stroke="#e8e8e8" strokeDasharray="0 0" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#4078BC"
+              strokeWidth={3}
+              fill="#f2f6fa"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
+      {bottomLabel && (
+        <label
+          style={{
+            font: "400 18px/48px 'Montserrat', sans-serif",
+            color: '#7D7E80',
+          }}
+          className="flex m-auto w-3"
+        >
+          {bottomLabel}
+        </label>
+      )}
     </div>
   );
 }

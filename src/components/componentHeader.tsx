@@ -27,7 +27,7 @@ export default function ComponentHeader({
         onClick={() => setDropDown(!dropDownActive)}
         className={`${
           dropDownActive ? 'bg-white' : ''
-        } flex flex-col items-center justify-between mt-2 py-[7px] h-[32px] w-[32px] relative transition-all duration-500 cursor-pointer`}
+        } flex flex-col items-center justify-between mt-2 py-[7px] h-[32px] w-[32px] relative transition-all duration-300 cursor-pointer`}
       >
         {[0, 1, 2].map((item) => (
           <div

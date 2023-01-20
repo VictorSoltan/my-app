@@ -1,4 +1,6 @@
 import ReactWordcloud from 'react-wordcloud';
+import { useState } from 'react';
+import ComponentHeader from './componentHeader';
 
 export default function SimpleWordcloud() {
   const words = [
@@ -125,17 +127,25 @@ export default function SimpleWordcloud() {
     rotationAngles: [0],
     fontSizes: [20, 100],
     padding: 10,
-    fontFamily: 'sans-serif',
+    fontFamily: 'Public Sans',
   } as any;
+  const [dropDown, setDropDown] = useState(false);
   return (
     <div
-      className="bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-4 w-[1155px] h-[383px] relative"
+      className="bg-light-solidcolor-extra-cardbackground rounded-[12px] shrink-0 mt-4 w-[1155px] h-[383px] relative"
       style={{
         boxShadow:
           'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
       }}
     >
-      <ReactWordcloud words={words} options={options} />
+      <ComponentHeader
+        title={'Word cloud'}
+        dropDownActive={dropDown}
+        setDropDown={setDropDown}
+      />
+      <div className="mt-2">
+        <ReactWordcloud words={words} options={options} />
+      </div>
     </div>
   );
 }
