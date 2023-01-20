@@ -190,6 +190,7 @@ export default function ChartArea({
             <CartesianGrid stroke="#e8e8e8" strokeDasharray="0 0" />
             <XAxis dataKey="name" />
             <YAxis />
+            <Tooltip />
             <Area
               type="monotone"
               dataKey="uv"
