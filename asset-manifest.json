@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/my-app/static/css/main.0df3221a.css",
+    "main.js": "/my-app/static/js/main.d76cdc69.js",
+    "static/js/787.28cb0dcd.chunk.js": "/my-app/static/js/787.28cb0dcd.chunk.js",
+    "static/media/Gear.svg": "/my-app/static/media/Gear.e7da686945adf7059dd5bd06c6e7232b.svg",
+    "static/media/ImportPdf.svg": "/my-app/static/media/ImportPdf.8b36ae51826da20c95950e72b0a8ae71.svg",
+    "static/media/Messaging.svg": "/my-app/static/media/Messaging.6b3cada15a1cb7475d249c8fde5b1f4a.svg",
+    "static/media/MultipleMessages.svg": "/my-app/static/media/MultipleMessages.8a1a8b421d302fbfc5e96a518b52871d.svg",
+    "static/media/Clock.svg": "/my-app/static/media/Clock.f5a431e3dc51a22179d2b88ab01d6440.svg",
+    "index.html": "/my-app/index.html",
+    "static/media/Users.svg": "/my-app/static/media/Users.3ff110a04a5f353e2dc067957c208286.svg",
+    "main.0df3221a.css.map": "/my-app/static/css/main.0df3221a.css.map",
+    "main.d76cdc69.js.map": "/my-app/static/js/main.d76cdc69.js.map",
+    "787.28cb0dcd.chunk.js.map": "/my-app/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0df3221a.css",
+    "static/js/main.d76cdc69.js"
+  ]
+}
