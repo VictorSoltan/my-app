@@ -24,8 +24,10 @@ export default function Dropdown({
           onClick={() => setSelectedDate(item)}
           key={index}
           className={` ${
-            item === selectedDate ? 'bg-[#e8eff7] text-[#4078BC]' : 'bg-white'
-          } dropdownElem text-[#6E6B7B] relative flex items-center w-[189px] h-[40px] text-left pl-4`}
+            item === selectedDate
+              ? 'bg-[#e8eff7] text-[#4078BC]'
+              : 'bg-white text-[#6E6B7B] '
+          } dropdownElem relative flex items-center w-[189px] h-[40px] text-left pl-4`}
           style={{
             font: "400 14px/21px 'Montserrat', sans-serif",
           }}
