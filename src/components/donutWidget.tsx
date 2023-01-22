@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import ComponentHeader from './componentHeader';
 import { PieChart } from 'react-minimal-pie-chart';
-// import './styles.scss';
 
 export default function donutWidget({ data }: { data: any }) {
   const [dropDown, setDropDown] = useState(false);
 
-  if (data.chartData.length === 3) {
+  function toggleLabel(e: any, state: boolean) {
+    const children = e.target.parentNode.children;
+    const index = Array.from(e.target.parentNode.children).indexOf(e.target);
+    if (state) children[children.length / 2 + index].style.display = 'block';
+    else children[children.length / 2 + index].style.display = 'none';
   }
 
   return (
@@ -32,17 +35,11 @@ export default function donutWidget({ data }: { data: any }) {
             center={[50, 50]}
             data={data.chartData}
             label={({ dataEntry }) => Math.round(dataEntry.percentage) + '%'}
-            onMouseOver={(e: any) =>
-              (e.target.nextSibling.nextSibling.nextSibling.style.display =
-                'block')
-            }
-            onMouseOut={(e: any) =>
-              (e.target.nextSibling.nextSibling.nextSibling.style.display =
-                'none')
-            }
+            onMouseOver={(e) => toggleLabel(e, true)}
+            onMouseOut={(e) => toggleLabel(e, false)}
             viewBoxSize={[100, 100]}
             startAngle={-90}
-            labelPosition={100}
+            labelPosition={95}
             labelStyle={{
               fontSize: '10px',
               background: 'white',

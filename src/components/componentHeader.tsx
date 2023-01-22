@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import ComponentDropdown from './componentDropdown';
 
 export default function ComponentHeader({
@@ -11,6 +12,23 @@ export default function ComponentHeader({
   dropDownActive: boolean;
   setDropDown?: any;
 }) {
+  function handleClick(e: any) {
+    if (dropDownActive) {
+      setDropDown(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, [dropDownActive]);
+
+  function toggleDropdown() {
+    setTimeout(() => {
+      setDropDown(!dropDownActive);
+    }, 50);
+  }
+
   return (
     <header
       className={`${
@@ -28,10 +46,10 @@ export default function ComponentHeader({
         {title}
       </h3>
       <span
-        onClick={() => setDropDown(!dropDownActive)}
+        onClick={toggleDropdown}
         className={`${
           dropDownActive ? 'bg-white' : ''
-        } flex flex-col items-center justify-between mt-2 py-[7px] h-[32px] w-[32px] relative transition-all duration-300 cursor-pointer`}
+        } dropdown flex flex-col items-center justify-between mt-2 py-[7px] h-[32px] w-[32px] relative transition-all duration-300 cursor-pointer`}
       >
         {[0, 1, 2].map((item) => (
           <div

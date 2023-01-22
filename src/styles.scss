@@ -1,0 +1,137 @@
+.ringring {
+  animation: pulsate 10s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+@keyframes pulsate {
+  88% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.1, 1.1);
+    opacity: 0;
+  }
+}
+
+.kinds {
+  svg {
+    path:nth-child(2) {
+      stroke-width: 24 !important;
+    }
+  }
+}
+.donut {
+  text {
+    display: none;
+  }
+}
+.dropdownElem:hover {
+  background: #e8eff7;
+}
+.recharts-layer .recharts-bar-rectangle {
+  path:hover {
+    fill: #4078bc;
+  }
+}
+.recharts-tooltip-cursor {
+  display: none;
+}
+.recharts-tooltip-item-list {
+  span {
+    color: #4078bc;
+  }
+}
+
+.rmdp-wrapper {
+  font-family: 'Public Sans';
+  font-style: normal;
+  .rmdp-header {
+    padding-bottom: 45px;
+    span {
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 21px;
+      color: #6f6b7d;
+    }
+    .rmdp-arrow-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(75, 70, 92, 0.08);
+      border-radius: 30px;
+      width: 28px;
+      height: 28px;
+      i {
+        margin: 0;
+        border-color: #6f6b7d;
+      }
+    }
+  }
+  .rmdp-calendar {
+    padding-bottom: 0;
+  }
+  .rmdp-week {
+    padding-top: 6px;
+  }
+  .rmdp-day-picker {
+    border-top: 1px solid #dbdade;
+    padding-top: 0;
+    padding-bottom: 0;
+    & > :first-child {
+      border-right: 1px solid #dbdade;
+      padding-right: 16px;
+      padding-bottom: 8px;
+      margin-right: -16px;
+    }
+  }
+  .rmdp-week-day {
+    color: #5d596c;
+    font-weight: 600;
+  }
+  .rmdp-range {
+    background-color: rgba(115, 103, 240, 0.16);
+    color: #4078bc;
+    box-shadow: none;
+  }
+
+  .start,
+  .end {
+    background: #4078bc;
+    color: white;
+  }
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-inline: 5px;
+    height: 48px;
+    border-top: 1px solid #dbdade;
+
+    span {
+      font-family: 'Public Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      color: #6f6b7d;
+    }
+    button {
+      width: 73px;
+      height: 28px;
+      background: rgba(115, 103, 240, 0.16);
+      border-radius: 4px;
+      &:nth-child(2) {
+        background: rgba(115, 103, 240, 0.16);
+        color: #4078bc;
+      }
+      &:last-child {
+        background: #4078bc;
+        color: white;
+      }
+    }
+  }
+}

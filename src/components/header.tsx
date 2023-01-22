@@ -1,24 +1,62 @@
+import { useState, useEffect } from 'react';
 import Dropdown from './Dropdown';
+import MultipleDropdown from './MultipleDropdown';
+import CountUp from 'react-countup';
 import Gear from '../assets/Gear.svg';
 import Pdf from '../assets/ImportPdf.svg';
 
-export default function Header() {
-  const dropdownsInfo = [
+export default function Header({ setCalendar }: { setCalendar: any }) {
+  const [dropdownsInfo, setDropdownsInfo] = useState([
     {
       label: 'Select Date Range',
       title: 'Wähle einen Zeitraum',
+      dropDown: Dropdown,
+      dropDownActive: false,
     },
     {
       label: 'Refferer',
       title: 'Wähle einen Refferer',
+      dropDown: MultipleDropdown,
+      dropDownActive: false,
     },
     {
       label: 'Parameters/Values',
       title: 'Wähle eine Option',
+      dropDown: Dropdown,
+      dropDownActive: false,
     },
-  ];
+  ]);
 
   const buttons = [Pdf, Gear];
+
+  function toggleDropdown(index: number, active: boolean) {
+    setTimeout(() => {
+      let newDropdownsInfo = [...dropdownsInfo];
+      for (let x = 0; x < newDropdownsInfo.length; x++) {
+        newDropdownsInfo[x].dropDownActive = false;
+      }
+      newDropdownsInfo[index].dropDownActive = active;
+      setDropdownsInfo(newDropdownsInfo);
+    }, 50);
+  }
+
+  function handleClick(e: any) {
+    if (!e.target.className.includes('multiDropdown')) {
+      let newDropdownsInfo = [...dropdownsInfo];
+      for (let x = 0; x < newDropdownsInfo.length; x++) {
+        if (newDropdownsInfo[x].dropDownActive) {
+          newDropdownsInfo[x].dropDownActive = false;
+        }
+      }
+      setDropdownsInfo(newDropdownsInfo);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, [dropdownsInfo]);
+
   return (
     <div className="flex items-center justify-between shrink-0 w-[1155px] h-[87px] relative mt-12">
       <div
@@ -26,12 +64,12 @@ export default function Header() {
         style={{ boxShadow: '0px 4px 18px 0px rgba(75, 70, 92, 0.10)' }}
       >
         <h3
-          className="text-primary"
+          className="text-primary w-5"
           style={{
             font: "600 18px/24px 'Public Sans', sans-serif",
           }}
         >
-          215
+          <CountUp end={215} duration={2.4} />
         </h3>
 
         <h3
@@ -43,7 +81,10 @@ export default function Header() {
           Live Conversations
         </h3>
 
-        <div className="bg-[#2cca3c] self-start rounded-[50%] mt-2 w-2 h-2" />
+        <div className="ring-container flex items-center justify-center self-start mt-2 w-2 h-2`">
+          <div className="ringring absolute w-5 h-5 rounded-[50%] border-[2px] border-[#2cca3c]" />
+          <div className="w-2 h-2 bg-[#2cca3c] rounded-[50%]" />
+        </div>
       </div>
 
       {dropdownsInfo.map((item, index) => (
@@ -56,7 +97,8 @@ export default function Header() {
           >
             {item.label}
           </label>
-          <div
+          <button
+            onClick={() => toggleDropdown(index, !item.dropDownActive)}
             className="flex items-center justify-between bg-white border  w-[213px] h-[38px] pl-[5px] pr-[15px] overflow-hidden"
             style={{
               border:
@@ -74,7 +116,9 @@ export default function Header() {
               {item.title}
             </h4>
             <svg
-              className="shrink-0 overflow-visible"
+              className={`${
+                item.dropDownActive ? 'rotate-90' : ''
+              } shrink-0 overflow-visible transition-all duration-500 `}
               style={{}}
               width="20"
               height="20"
@@ -98,8 +142,11 @@ export default function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-            {/* <Dropdown /> */}
-          </div>
+          </button>
+          <item.dropDown
+            active={item.dropDownActive}
+            setCalendar={setCalendar}
+          />
         </div>
       ))}
       {buttons.map((item, index) => (

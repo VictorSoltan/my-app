@@ -5,7 +5,7 @@ export default function AddWidget() {
       style={{ border: 'dashed #4078bc' }}
     >
       <svg
-        className="relative overflow-visible"
+        className="relative overflow-visible cursor-pointer"
         style={{}}
         width="65"
         height="65"

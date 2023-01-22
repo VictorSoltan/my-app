@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import ComponentHeader from './componentHeader';
 import { PieChart } from 'react-minimal-pie-chart';
-// import './styles.scss';
 
 export default function PieWidget() {
   const [dropDown, setDropDown] = useState(false);
@@ -32,6 +31,14 @@ export default function PieWidget() {
       percentage: '77%',
     },
   ] as any;
+
+  function toggleLabel(e: any, state: boolean) {
+    const children = e.target.parentNode.children;
+    const index = Array.from(e.target.parentNode.children).indexOf(e.target);
+    if (state) children[children.length / 2 + index].style.display = 'block';
+    else children[children.length / 2 + index].style.display = 'none';
+  }
+
   return (
     <div
       className="donut bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-4 w-[32%] h-[383px] relative"
@@ -74,15 +81,9 @@ export default function PieWidget() {
                   color: '#4179bd',
                 },
               ]}
-              label={(data: any) => data.dataEntry.label}
-              onMouseOver={(e: any) =>
-                (e.target.nextSibling.nextSibling.nextSibling.style.display =
-                  'block')
-              }
-              onMouseOut={(e: any) =>
-                (e.target.nextSibling.nextSibling.nextSibling.style.display =
-                  'none')
-              }
+              label={({ dataEntry }) => Math.round(dataEntry.percentage) + '%'}
+              onMouseOver={(e) => toggleLabel(e, true)}
+              onMouseOut={(e) => toggleLabel(e, false)}
               segmentsShift={1}
               viewBoxSize={[104, 104]}
               startAngle={-90}
@@ -133,18 +134,6 @@ export default function PieWidget() {
           </div>
         </div>
       </div>
-
-      <svg className="absolute" width="100%" height="100%">
-        <defs>
-          <filter x="0" y="0" width="1" height="1" id="solid">
-            <feFlood flood-color="white" result="bg" />
-            <feMerge>
-              <feMergeNode in="bg" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-      </svg>
     </div>
   );
 }

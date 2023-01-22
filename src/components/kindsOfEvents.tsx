@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import ComponentHeader from './componentHeader';
 import { PieChart } from 'react-minimal-pie-chart';
-import './styles.scss';
 
 export default function KindsOfEvents() {
   const data = [
@@ -116,7 +115,7 @@ export default function KindsOfEvents() {
               animationEasing="ease-out"
               center={[60, 60]}
               data={item.chartData}
-              label={(data) => data.dataEntry.title}
+              label={({ dataEntry }) => Math.round(dataEntry.percentage) + '%'}
               viewBoxSize={[120, 120]}
               startAngle={-90}
               labelPosition={100}
