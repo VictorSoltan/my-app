@@ -8,7 +8,9 @@ export default function ReffererDropdownSelect({
   return (
     <div
       className={`${
-        dropDownActive ? 'opacity-100 visible' : 'opacity-0 invisible'
+        dropDownActive
+          ? 'opacity-100 visible'
+          : 'opacity-0 invisible pointer-events-none'
       }  w-[213px] absolute right-0 top-8 z-10 transition-all duration-300 `}
       style={{
         boxShadow:

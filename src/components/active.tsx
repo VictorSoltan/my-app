@@ -16,43 +16,43 @@ const data = [
   {
     name: 'Mon',
     uv: 4000,
-    pv: 2400,
+    pv: 50,
     amt: 2400,
   },
   {
     name: 'Tue',
     uv: 3000,
-    pv: 1398,
+    pv: 60,
     amt: 2210,
   },
   {
     name: 'Wen',
     uv: 2000,
-    pv: 9800,
+    pv: 140,
     amt: 2290,
   },
   {
     name: 'Thu',
     uv: 2780,
-    pv: 3908,
+    pv: 100,
     amt: 2000,
   },
   {
     name: 'Fri',
     uv: 1890,
-    pv: 4800,
+    pv: 90,
     amt: 2181,
   },
   {
     name: 'Sat',
     uv: 2390,
-    pv: 3800,
+    pv: 80,
     amt: 2500,
   },
   {
     name: 'Sun',
     uv: 3490,
-    pv: 4300,
+    pv: 90,
     amt: 2100,
   },
 ];
@@ -74,13 +74,13 @@ export default function Active({ width }: { width: string }) {
         dropDownActive={dropDown}
         setDropDown={setDropDown}
       />
-      <ResponsiveContainer width="100%" height="74%">
+      <ResponsiveContainer width="93%" height="74%">
         <BarChart
           data={data}
           margin={{
             top: 5,
             right: 30,
-            left: 20,
+            left: 0,
             bottom: 5,
           }}
         >
@@ -88,7 +88,7 @@ export default function Active({ width }: { width: string }) {
           <CartesianGrid strokeDasharray="0 0" stroke="#e8e8e8" />
           <XAxis dataKey="name" tick={{ fill: '#A5A3AE' }} stroke="#A5A3AE" />
           <YAxis tick={{ fill: '#A5A3AE' }} stroke="#A5A3AE" />
-          <Bar dataKey="pv" fill="#d3e0ea" barSize={16.84} radius={10} />
+          <Bar dataKey="pv" fill="#c0d4e5" barSize={16.84} radius={6} />
         </BarChart>
       </ResponsiveContainer>
     </div>

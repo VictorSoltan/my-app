@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import './styles.scss';
+import LazyLoad from 'react-lazy-load';
+
 import Header from './components/header';
 import Statistics from './components/Statistics';
 import KindsOfEvents from './components/kindsOfEvents';
@@ -15,8 +17,7 @@ import PieWidget from './components/pieWidget';
 
 import AddWidget from './components/addWidget';
 
-import { Calendar } from 'react-multi-date-picker';
-
+import CalendarPopUp from './components/calendarPopUp';
 function App() {
   const data = [
     {
@@ -103,29 +104,24 @@ function App() {
     },
   ] as any;
 
-  function CustomRangeInput(value: any) {
-    let from = value[0] || '';
-    let to = value[1] || '';
-    function getDateFormate(date: any) {
-      const d = new Date(date);
-      return d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
-    }
-    let response =
-      from && to
-        ? getDateFormate(from) + ' - ' + getDateFormate(to)
-        : 'Select range';
-    console.log(response);
-    return response;
-  }
-  const [value, setValue] = useState<any>(new Date()),
+  const [selectedRange, setSelectedRange] = useState<string>(''),
     [calendar, setCalendar] = useState<boolean>(false);
 
-  return (
-    <div className=" justify-center bg-[#f8f7fa] ">
-      <div className="flex flex-col items-center w-[1155px] m-auto">
-        <Header setCalendar={setCalendar} />
-        <Statistics />
-        <KindsOfEvents />
+  const components = [
+    {
+      component: (
+        <Header
+          setCalendar={setCalendar}
+          selectedRange={selectedRange}
+          setSelectedRange={setSelectedRange}
+        />
+      ),
+      height: 120,
+    },
+    { component: <Statistics />, height: 160 },
+    { component: <KindsOfEvents />, height: 410 },
+    {
+      component: (
         <ChartArea
           title={'Conversation Length'}
           leftLabel={'Conversions'}
@@ -133,7 +129,12 @@ function App() {
           width={'100%'}
           height={'383px'}
         />
-        <SimpleWordCloud />
+      ),
+      height: 410,
+    },
+    { component: <SimpleWordCloud />, height: 410 },
+    {
+      component: (
         <div className="flex justify-between w-full">
           <ChartArea
             fontSize="15px"
@@ -144,58 +145,79 @@ function App() {
           />
           <Active width={'38%'} />
         </div>
-        {/* <PieChartElem /> */}
+      ),
+      height: 280,
+    },
+    {
+      component: (
         <div className="flex justify-between w-full">
-          {data.map((item: any) => (
-            <DonutWidget data={item} />
+          {data.map((item: any, index: number) => (
+            <DonutWidget data={item} key={index} />
           ))}
         </div>
+      ),
+      height: 410,
+    },
+    {
+      component: (
         <div className="flex justify-between w-full">
           <WebsitesWidget width={'66%'} />
           <PieWidget />
         </div>
+      ),
+      height: 420,
+    },
+  ];
 
+  return (
+    <div className=" justify-center bg-[#f8f7fa] ">
+      <div className="flex flex-col items-center w-[1155px] m-auto">
+        {components.map((item, index) => (
+          <LazyLoad
+            key={index}
+            className="w-full"
+            height={item.height}
+            threshold={0.2}
+          >
+            {item.component}
+          </LazyLoad>
+        ))}
         <AddWidget />
       </div>
-      <div
-        className={`${
-          calendar ? 'opacity-100 visible' : 'opacity-0 invisible'
-        } transition-all duration-500 fixed top-12 w-full min-h-screen h-screen flex items-center justify-center pb-24 z-10`}
+      <CalendarPopUp
+        calendar={calendar}
+        setCalendar={setCalendar}
+        selectedRange={selectedRange}
+        setSelectedRange={setSelectedRange}
+      />
+
+      <svg
+        style={{
+          filter: 'drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4))',
+        }}
+        className="absolute h-0"
       >
-        <div
-          onClick={() => setCalendar(false)}
-          className="absolute cursor-pointer bg-black/30 w-full h-full"
-        />
-        <Calendar
-          multiple
-          range
-          numberOfMonths={2}
-          showOtherDays
-          /**
-           * set "onlyShowInRangeDates" to false,
-           * if you want to see selected dates that
-           * are not in range of min and max date
-           */
-          value={value}
-          onChange={setValue}
-        >
-          <footer className="">
-            <span style={{ margin: '5px' }}>{CustomRangeInput(value)}</span>
-            <button
-              onClick={() => setCalendar(false)}
-              style={{ margin: '5px' }}
-            >
-              Cancel
-            </button>
-            <button
-              onClick={() => setCalendar(false)}
-              style={{ margin: '5px' }}
-            >
-              Apply
-            </button>
-          </footer>
-        </Calendar>
-      </div>
+        <defs>
+          <filter x="-0.2" y="-0.2" width="1.4" height="1.4" id="solid">
+            <feFlood floodColor="white" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComponentTransfer>
+              <feFuncA type="table" tableValues="0 0 0 1" />
+            </feComponentTransfer>
+
+            <feComponentTransfer>
+              <feFuncA type="table" tableValues="0 1 1 1 1 1 1 1" />
+            </feComponentTransfer>
+            <feComposite in="SourceGraphic" />
+
+            <feMerge>
+              <feMergeNode in="bg" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+            <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.09" />
+          </filter>
+        </defs>
+      </svg>
     </div>
   );
 }

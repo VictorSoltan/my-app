@@ -41,7 +41,7 @@ export default function Statistics() {
           'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
       }}
     >
-      <header className="flex justify-between mt-4 px-4">
+      <header className="flex justify-between mt-4 px-4 pt-3">
         <h3
           className="text-statText"
           style={{

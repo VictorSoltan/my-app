@@ -5,29 +5,43 @@ import CountUp from 'react-countup';
 import Gear from '../assets/Gear.svg';
 import Pdf from '../assets/ImportPdf.svg';
 
-export default function Header({ setCalendar }: { setCalendar: any }) {
-  const [dropdownsInfo, setDropdownsInfo] = useState([
-    {
-      label: 'Select Date Range',
-      title: 'Wähle einen Zeitraum',
-      dropDown: Dropdown,
-      dropDownActive: false,
-    },
-    {
-      label: 'Refferer',
-      title: 'Wähle einen Refferer',
-      dropDown: MultipleDropdown,
-      dropDownActive: false,
-    },
-    {
-      label: 'Parameters/Values',
-      title: 'Wähle eine Option',
-      dropDown: Dropdown,
-      dropDownActive: false,
-    },
-  ]);
-
-  const buttons = [Pdf, Gear];
+export default function Header({
+  setCalendar,
+  selectedRange,
+  setSelectedRange,
+}: {
+  setCalendar: any;
+  selectedRange: string;
+  setSelectedRange: any;
+}) {
+  const [dropdownsInfo, setDropdownsInfo] = useState<
+      Array<{
+        label: string;
+        title: string;
+        dropDown: any;
+        dropDownActive: boolean;
+      }>
+    >([
+      {
+        label: 'Select Date Range',
+        title: 'Wähle einen Zeitraum',
+        dropDown: Dropdown,
+        dropDownActive: false,
+      },
+      {
+        label: 'Refferer',
+        title: 'Wähle einen Refferer',
+        dropDown: MultipleDropdown,
+        dropDownActive: false,
+      },
+      {
+        label: 'Parameters/Values',
+        title: 'Wähle eine Option',
+        dropDown: MultipleDropdown,
+        dropDownActive: false,
+      },
+    ]),
+    buttons = [Pdf, Gear];
 
   function toggleDropdown(index: number, active: boolean) {
     setTimeout(() => {
@@ -41,15 +55,17 @@ export default function Header({ setCalendar }: { setCalendar: any }) {
   }
 
   function handleClick(e: any) {
-    if (!e.target.className.includes('multiDropdown')) {
-      let newDropdownsInfo = [...dropdownsInfo];
-      for (let x = 0; x < newDropdownsInfo.length; x++) {
-        if (newDropdownsInfo[x].dropDownActive) {
-          newDropdownsInfo[x].dropDownActive = false;
+    try {
+      if (!e.target.className.includes('multiDropdown')) {
+        let newDropdownsInfo = [...dropdownsInfo];
+        for (let x = 0; x < newDropdownsInfo.length; x++) {
+          if (newDropdownsInfo[x].dropDownActive) {
+            newDropdownsInfo[x].dropDownActive = false;
+          }
         }
+        setDropdownsInfo(newDropdownsInfo);
       }
-      setDropdownsInfo(newDropdownsInfo);
-    }
+    } catch (e) {}
   }
 
   useEffect(() => {
@@ -58,13 +74,13 @@ export default function Header({ setCalendar }: { setCalendar: any }) {
   }, [dropdownsInfo]);
 
   return (
-    <div className="flex items-center justify-between shrink-0 w-[1155px] h-[87px] relative mt-12">
+    <div className="header_component flex items-center justify-between shrink-0 w-[1155px] h-[87px] relative mt-8">
       <div
-        className="flex items-center justify-between bg-[#ffffff] pl-4 px-2 rounded-[1px] w-[258px] h-[45px] "
+        className="flex items-center justify-between bg-[#ffffff] pl-4 px-2 rounded-[1px] w-[258px] h-[45px] overflow-hidden"
         style={{ boxShadow: '0px 4px 18px 0px rgba(75, 70, 92, 0.10)' }}
       >
         <h3
-          className="text-primary w-5"
+          className="text-primary absolute"
           style={{
             font: "600 18px/24px 'Public Sans', sans-serif",
           }}
@@ -73,12 +89,15 @@ export default function Header({ setCalendar }: { setCalendar: any }) {
         </h3>
 
         <h3
-          className="text-secondary"
+          className="text-secondary justify-start items-start w-full"
           style={{
             font: "400 18px/20px 'Public Sans', sans-serif",
           }}
         >
-          Live Conversations
+          <div className="text-box flex justify-start items-center relative">
+            <div>Today's conversations</div>
+            <div>Live Conversations</div>
+          </div>
         </h3>
 
         <div className="ring-container flex items-center justify-center self-start mt-2 w-2 h-2`">
@@ -144,8 +163,13 @@ export default function Header({ setCalendar }: { setCalendar: any }) {
             </svg>
           </button>
           <item.dropDown
+            index={index}
+            dropdownsInfo={dropdownsInfo}
+            setDropdownsInfo={setDropdownsInfo}
             active={item.dropDownActive}
             setCalendar={setCalendar}
+            selectedRange={selectedRange}
+            setSelectedRange={setSelectedRange}
           />
         </div>
       ))}

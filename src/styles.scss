@@ -1,26 +1,94 @@
-.ringring {
-  animation: pulsate 10s ease-out;
-  animation-iteration-count: infinite;
-  opacity: 0;
+text {
+  pointer-events: none;
 }
-@keyframes pulsate {
-  88% {
-    -webkit-transform: scale(0.1, 0.1);
+.header_component {
+  .ringring {
+    animation: pulsate 4s ease-out;
+    animation-iteration-count: infinite;
     opacity: 0;
   }
-  94% {
-    opacity: 1;
+  @keyframes pulsate {
+    88% {
+      -webkit-transform: scale(0.1, 0.1);
+      opacity: 0;
+    }
+    94% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1.1, 1.1);
+      opacity: 0;
+    }
   }
-  100% {
-    -webkit-transform: scale(1.1, 1.1);
-    opacity: 0;
-  }
-}
 
+  .text-box {
+    height: 40px;
+  }
+  .text-box div {
+    position: absolute;
+    top: -50px;
+    left: 35px;
+    transform: rotateX(-90deg);
+    opacity: 0;
+    animation-timing-function: ease;
+  }
+
+  .text-box div:nth-child(1) {
+    animation: rollDown 30s forwards infinite;
+  }
+
+  .text-box div:nth-child(2) {
+    animation: rollDown2 30s forwards infinite;
+  }
+
+  @keyframes rollDown {
+    0% {
+      top: -50px;
+      transform: rotateX(-90deg);
+    }
+    4% {
+      top: 23%;
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+    44% {
+      top: 23%;
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+    50% {
+      top: 70px;
+      transform: rotateX(50deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes rollDown2 {
+    48% {
+      top: -50px;
+      transform: rotateX(-90deg);
+    }
+    51% {
+      top: 23%;
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+    94% {
+      top: 23%;
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+    100% {
+      top: 70px;
+      transform: rotateX(50deg);
+      opacity: 0;
+    }
+  }
+}
 .kinds {
   svg {
     path:nth-child(2) {
-      stroke-width: 24 !important;
+      stroke-width: 24;
     }
   }
 }

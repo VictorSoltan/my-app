@@ -82,6 +82,26 @@ export default function KindsOfEvents() {
   ];
   const [dropDown, setDropDown] = useState(false);
 
+  function tooglePathsStyle(e: any, state) {
+    const elems = Array.from(e.target.parentNode.children) as any;
+    for (let x = 0; x < elems.length / 2; x++) {
+      elems[x].style.strokeWidth = 17.5;
+    }
+    if (state) e.target.style.strokeWidth = 24;
+    else e.target.style.strokeWidth = 17.5;
+  }
+
+  function handleMouseEvent(e: any) {
+    if (
+      e.target.tagName === 'svg' &&
+      e.target.parentNode.className.includes('kind')
+    ) {
+      const elems = Array.from(e.target.children) as any;
+      elems[1].style.strokeWidth = 24;
+    }
+  }
+
+  document.addEventListener('mouseover', handleMouseEvent);
   return (
     <div
       className="kinds bg-light-solidcolor-extra-cardbackground shrink-0 mt-4 w-[1155px] h-[383px] relative"
@@ -99,7 +119,7 @@ export default function KindsOfEvents() {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center border-[1px] border-[#ECEEF7]  h-[227px] w-[289px]"
+            className="kind flex flex-col items-center border-[1px] border-[#ECEEF7]  h-[227px] w-[289px]"
           >
             <h3
               className="mt-4 mb-[5px]"
@@ -111,11 +131,13 @@ export default function KindsOfEvents() {
             </h3>
             <PieChart
               animate
-              animationDuration={500}
+              animationDuration={1000}
               animationEasing="ease-out"
               center={[60, 60]}
               data={item.chartData}
               label={({ dataEntry }) => Math.round(dataEntry.percentage) + '%'}
+              onMouseOver={(e: any) => tooglePathsStyle(e, true)}
+              onMouseOut={(e: any) => tooglePathsStyle(e, false)}
               viewBoxSize={[120, 120]}
               startAngle={-90}
               labelPosition={100}
@@ -147,18 +169,6 @@ export default function KindsOfEvents() {
           </div>
         ))}
       </div>
-
-      {/* <svg className="absolute" width="100%" height="100%">
-        <defs>
-          <filter x="0" y="0" width="1" height="1" id="solid">
-            <feFlood flood-color="white" result="bg" />
-            <feMerge>
-              <feMergeNode in="bg" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-      </svg> */}
     </div>
   );
 }

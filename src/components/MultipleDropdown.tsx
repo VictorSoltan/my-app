@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 
 export default function MultipleDropdown({
+  index,
+  dropdownsInfo,
+  setDropdownsInfo,
   active,
-  setCalendar,
 }: {
+  index: number;
+  dropdownsInfo: any;
+  setDropdownsInfo: any;
   active: boolean;
-  setCalendar: any;
 }) {
   const [referrers, setReferrers] = useState([
     { title: 'Referrer 1', active: false },
@@ -13,23 +17,38 @@ export default function MultipleDropdown({
     { title: 'Referrer 3', active: false },
     { title: 'Referrer 4', active: false },
   ]);
-
-  function defineReferrers(index: number) {
-    let newReferrers = [...referrers];
-    newReferrers[index].active = !newReferrers[index].active;
-    setReferrers(newReferrers);
+  function defineReferrers(indx: number) {
+    try {
+      let newReferrers = [...referrers];
+      newReferrers[indx].active = !newReferrers[indx].active;
+      let newDropdownsInfo = [...dropdownsInfo];
+      const length = newReferrers.filter((item: any) => item.active).length;
+      if (length === 1)
+        newDropdownsInfo[index].title =
+          newReferrers[
+            newReferrers.findIndex((item: any) => item.active)
+          ].title;
+      else newDropdownsInfo[index].title = 'Several values selected';
+      setDropdownsInfo(newDropdownsInfo);
+      setReferrers(newReferrers);
+    } catch (e) {}
   }
   function removeActiveReffers() {
     let newReferrers = [...referrers];
     for (let x = 0; x < newReferrers.length; x++) {
       newReferrers[x].active = false;
     }
+    let newDropdownsInfo = [...dropdownsInfo];
+    newDropdownsInfo[index].title = 'No referrer';
+    setDropdownsInfo(newDropdownsInfo);
     setReferrers(newReferrers);
   }
   return (
     <div
       className={` ${
-        active ? 'opacity-100 visible' : 'opacity-0 invisible'
+        active
+          ? 'opacity-100 visible'
+          : 'opacity-0 invisible pointer-events-none'
       } " absolute top-10 left-0 w-[189px] h-[200px] transition-all duration-500 z-10`}
       style={{
         boxShadow:

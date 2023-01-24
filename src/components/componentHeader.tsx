@@ -32,7 +32,7 @@ export default function ComponentHeader({
   return (
     <header
       className={`${
-        fontSize ? 'mt-2 mb-2' : 'mt-4'
+        fontSize ? 'mt-0 mb-2' : 'mt-4'
       } flex justify-between  px-6 pr-2`}
     >
       <h3

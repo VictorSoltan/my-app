@@ -75,11 +75,17 @@ export default function websitesWidget({ width }: { width: string }) {
           }}
         >
           <CartesianGrid stroke="#f5f5f5" />
-          <XAxis type="number" tick={{ fill: '#C0C7CE' }} stroke="#C0C7CE" />
+          <XAxis
+            type="number"
+            padding={{
+              left: 50,
+            }}
+            tick={{ fill: '#C0C7CE' }}
+            stroke="#C0C7CE"
+          />
           <YAxis
             dataKey="name"
             type="category"
-            scale="band"
             tick={{ fill: '#C0C7CE' }}
             stroke="#C0C7CE"
           />
