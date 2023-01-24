@@ -40,8 +40,7 @@ export default function Dropdown({
           : 'opacity-0 invisible pointer-events-none'
       } " absolute top-10 left-0 w-[189px] h-[241px] transition-all duration-500 z-10`}
       style={{
-        boxShadow:
-          'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
+        boxShadow: '0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
       }}
     >
       {dates.map((item, index) => (

@@ -33,7 +33,7 @@ export default function donutWidget({ data }: { data: any }) {
       />
       <div className="flex justify-between items-center mx-auto w-[90%] mt-2">
         <LazyLoad
-          threshold={0.95}
+          threshold={0.45}
           height={227}
           className="flex flex-col items-center h-[227px] w-full"
         >

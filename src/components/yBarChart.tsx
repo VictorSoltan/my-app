@@ -57,7 +57,7 @@ const data = [
   },
 ];
 
-export default function Active({ width }: { width: string }) {
+export default function YBarChart({ width }: { width: string }) {
   const [dropDown, setDropDown] = useState(false);
   return (
     <div

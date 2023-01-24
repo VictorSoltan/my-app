@@ -44,7 +44,7 @@ const data = [
   },
 ];
 
-export default function websitesWidget({ width }: { width: string }) {
+export default function XBarChart({ width }: { width: string }) {
   const [dropDown, setDropDown] = useState(false);
   return (
     <div

@@ -14,7 +14,6 @@ export default function PieWidget() {
   }
 
   useEffect(() => {
-    console.log('pieData');
     setData({
       mainTitle: 'Userfeedback (Antworten)',
       chartData: [

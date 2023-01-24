@@ -4,20 +4,22 @@ import './styles.scss';
 import LazyLoad from 'react-lazy-load';
 
 import Header from './components/header';
-import Statistics from './components/Statistics';
+import Statistics from './components/statistics';
 import KindsOfEvents from './components/kindsOfEvents';
-import ChartArea from './components/ChartArea';
+import ChartArea from './components/chartArea';
 import SimpleWordCloud from './components/simpleWordCloud';
-import Active from './components/active';
+import YBarChart from './components/yBarChart';
 
 import DonutWidget from './components/donutWidget';
 
-import WebsitesWidget from './components/websitesWidget';
+import XBarChart from './components/xBarChart';
 import PieWidget from './components/pieWidget';
 
 import AddWidget from './components/addWidget';
 
 import CalendarPopUp from './components/calendarPopUp';
+
+import SvgLabel from './components/svgLabel';
 function App() {
   const data = [
     {
@@ -47,7 +49,6 @@ function App() {
     },
     {
       mainTitle: 'Redakteurbewertungen (Antworten)',
-
       chartData: [
         {
           title: 'Name 1',
@@ -140,10 +141,10 @@ function App() {
             fontSize="15px"
             title={'Bot Most Active Hours'}
             leftLabel={'Users'}
-            width={'60%'}
+            width={'66%'}
             height={'255px'}
           />
-          <Active width={'38%'} />
+          <YBarChart width={'32%'} />
         </div>
       ),
       height: 280,
@@ -161,7 +162,7 @@ function App() {
     {
       component: (
         <div className="flex justify-between w-full">
-          <WebsitesWidget width={'66%'} />
+          <XBarChart width={'66%'} />
           <PieWidget />
         </div>
       ),
@@ -190,34 +191,7 @@ function App() {
         selectedRange={selectedRange}
         setSelectedRange={setSelectedRange}
       />
-
-      <svg
-        style={{
-          filter: 'drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4))',
-        }}
-        className="absolute h-0"
-      >
-        <defs>
-          <filter x="-0.2" y="-0.2" width="1.4" height="1.4" id="solid">
-            <feFlood floodColor="white" />
-            <feGaussianBlur stdDeviation="2" />
-            <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 0 0 1" />
-            </feComponentTransfer>
-
-            <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 1 1 1 1 1 1 1" />
-            </feComponentTransfer>
-            <feComposite in="SourceGraphic" />
-
-            <feMerge>
-              <feMergeNode in="bg" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-            <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.09" />
-          </filter>
-        </defs>
-      </svg>
+      <SvgLabel />
     </div>
   );
 }

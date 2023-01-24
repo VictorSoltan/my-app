@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Dropdown from './Dropdown';
-import MultipleDropdown from './MultipleDropdown';
+import Dropdown from './dropdown';
+import MultipleDropdown from './multipleDropdown';
 import CountUp from 'react-countup';
 import Gear from '../assets/Gear.svg';
 import Pdf from '../assets/ImportPdf.svg';
