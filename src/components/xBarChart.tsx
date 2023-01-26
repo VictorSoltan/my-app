@@ -2,14 +2,11 @@ import { useState } from 'react';
 import ComponentHeader from './componentHeader';
 import {
   ComposedChart,
-  Line,
-  Area,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from 'recharts';
 

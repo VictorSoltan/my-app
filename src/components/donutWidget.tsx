@@ -4,7 +4,8 @@ import { PieChart } from 'react-minimal-pie-chart';
 
 export default function donutWidget({ data }: { data: number }) {
   const [dropDown, setDropDown] = useState(false),
-    [loadedData, setLoadedData] = useState<any>(null);
+    [loadedData, setLoadedData] = useState<any>(null),
+    [animation, setAnimation] = useState<boolean>(false);
 
   function toggleLabel(e: any, state: boolean) {
     const children = e.target.parentNode.children;
@@ -99,11 +100,15 @@ export default function donutWidget({ data }: { data: number }) {
 
   useEffect(() => {
     setLoadedData(donutData[data]);
+    setTimeout(() => {
+      setAnimation(true);
+    }, 300);
   }, []);
 
   return (
     loadedData && (
       <div
+        key={loadedData}
         className="donut bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-4 w-[32%] h-[383px] relative"
         style={{
           boxShadow:
@@ -118,28 +123,32 @@ export default function donutWidget({ data }: { data: number }) {
         />
         <div className="flex justify-between items-center mx-auto w-[90%] mt-0">
           <div className="flex flex-col items-center h-[237px] w-full">
-            <PieChart
-              animate={loadedData}
-              animationDuration={1000}
-              animationEasing="ease-out"
-              center={[52, 52]}
-              data={loadedData.chartData}
-              label={({ dataEntry }) => Math.round(dataEntry.percentage) + '%'}
-              onMouseOver={(e) => toggleLabel(e, true)}
-              onMouseOut={(e) => toggleLabel(e, false)}
-              viewBoxSize={[104, 104]}
-              startAngle={-90}
-              labelPosition={95}
-              labelStyle={{
-                fontSize: '10px',
-                fill: 'black',
-                fontWeight: '800',
-                filter: 'url(#solid)',
-              }}
-              lengthAngle={360}
-              lineWidth={30}
-              paddingAngle={0}
-            />
+            {animation && (
+              <PieChart
+                animate
+                animationDuration={animation ? 1000 : 2000}
+                animationEasing="ease-out"
+                center={[52, 52]}
+                data={animation ? loadedData.chartData : []}
+                label={({ dataEntry }) =>
+                  Math.round(dataEntry.percentage) + '%'
+                }
+                onMouseOver={(e) => toggleLabel(e, true)}
+                onMouseOut={(e) => toggleLabel(e, false)}
+                viewBoxSize={animation ? [104, 104] : [0, 0]}
+                startAngle={animation ? -90 : 0}
+                labelPosition={95}
+                labelStyle={{
+                  fontSize: '10px',
+                  fill: 'black',
+                  fontWeight: '800',
+                  filter: 'url(#solid)',
+                }}
+                lengthAngle={360}
+                lineWidth={30}
+                paddingAngle={0}
+              />
+            )}
             <div className="absolute top-[27.5%] border-[1px] border-[#D9E1E7] rounded-[100%] p-[20%] flex flex-col justify-center items-center w-[80px] h-[80px]">
               <h1
                 style={{

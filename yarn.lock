@@ -6535,6 +6535,11 @@ lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
+lomit@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/lomit/-/lomit-0.1.1.tgz#b9270fa45d80a352cfdcf2d019a97e91d6ec21e6"
+  integrity sha512-1WmzTB6ujYBYbVbsfy7jnQ9Tu9odzeB0m9Ijx//b6aKYS6KqaeWJVRl6XHVrczz8W76A0O239UJKsVirKzIIGg==
+
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz"
@@ -7861,6 +7866,15 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-animate-props@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/react-animate-props/-/react-animate-props-0.2.4.tgz#7f76c1f46de19bf608144aaa5eb288e3ec86d03c"
+  integrity sha512-JfylxuA7t4IBDw/97nJZk7aSF+dVLT/DvX/Fpy+t69yqDzUjIkYHITDEQyHfMbaE5jF+4RpXtDyjE7YOqPI5wg==
+  dependencies:
+    lomit "^0.1.1"
+    react-display-name "^0.2.5"
+    tweenkle "^0.2.2"
+
 react-app-polyfill@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/react-app-polyfill/-/react-app-polyfill-3.0.0.tgz"
@@ -7920,6 +7934,11 @@ react-dev-utils@^12.0.1:
     shell-quote "^1.7.3"
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
+
+react-display-name@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/react-display-name/-/react-display-name-0.2.5.tgz#304c7cbfb59ee40389d436e1a822c17fe27936c6"
+  integrity sha512-I+vcaK9t4+kypiSgaiVWAipqHRXYmZIuAiS8vzFvXHHXVigg/sMKwlRgLy6LH2i3rmP+0Vzfl5lFsFRwF1r3pg==
 
 react-dom@^18.2.0:
   version "18.2.0"
@@ -8627,6 +8646,11 @@ signal-exit@^3.0.2, signal-exit@^3.0.3:
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
+sister@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/sister/-/sister-3.0.2.tgz#bb3e39f07b1f75bbe1945f29a27ff1e5a2f26be4"
+  integrity sha512-p19rtTs+NksBRKW9qn0UhZ8/TUI9BPw9lmtHny+Y3TinWlOa9jWh9xB0AtPSdmOy49NJJJSSe0Ey4C7h0TrcYA==
+
 sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"
@@ -9187,6 +9211,13 @@ tsutils@^3.21.0:
   integrity sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==
   dependencies:
     tslib "^1.8.1"
+
+tweenkle@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/tweenkle/-/tweenkle-0.2.2.tgz#7e87a46c30ccf7b31eb8beff518d29edc7132d66"
+  integrity sha512-63X9OfVZ9l7FTgyQsUN+kvHunwTWpyRyXlBMegPwAB7fiGZ+aMJtOYCznCwfcxKhiAcP+3ymjzomqboPxcME3Q==
+  dependencies:
+    sister "^3.0.2"
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"

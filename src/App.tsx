@@ -68,7 +68,6 @@ function App() {
     {
       component: (
         <div className="flex justify-between w-full">
-          <XBarChart width={'0%'} />
           {[0, 1, 2].map((item: number) => (
             <DonutWidget data={item} key={item} />
           ))}
