@@ -126,7 +126,7 @@ export default function donutWidget({ data }: { data: number }) {
             {animation && (
               <PieChart
                 animate
-                animationDuration={animation ? 1000 : 2000}
+                animationDuration={animation ? 1200 : 2000}
                 animationEasing="ease-out"
                 center={[52, 52]}
                 data={animation ? loadedData.chartData : []}

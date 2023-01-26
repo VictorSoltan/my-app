@@ -1,6 +1,18 @@
 text {
   pointer-events: none;
+  animation: fade_in_show 0.5s;
 }
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .header_component {
   .ringring {
     animation: pulsate 4s ease-out;

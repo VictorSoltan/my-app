@@ -131,7 +131,7 @@ export default function KindsOfEvents() {
             </h3>
             <PieChart
               animate
-              animationDuration={1000}
+              animationDuration={1200}
               animationEasing="ease-out"
               center={[60, 60]}
               data={item.chartData}
