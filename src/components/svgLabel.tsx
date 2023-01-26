@@ -32,7 +32,6 @@ export default function SvgLabel() {
               <feMergeNode in="bg" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
-            <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.09" />
           </filter>
         </defs>
       </svg>
