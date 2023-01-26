@@ -84,6 +84,18 @@ text {
       opacity: 0;
     }
   }
+  .header_buttons {
+    transition: 0.3s all;
+    img {
+      transition: 0.4s all;
+    }
+    &:hover {
+      background: #6b9edd;
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
 }
 .kinds {
   svg {

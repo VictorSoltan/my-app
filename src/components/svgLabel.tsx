@@ -7,7 +7,14 @@ export default function SvgLabel() {
       className="absolute h-0"
     >
       <defs>
-        <filter x="-0.2" y="-0.2" width="1.4" height="1.4" id="solid">
+        <filter
+          x="-0.2"
+          y="-0.2"
+          width="1.4"
+          height="1.4"
+          id="solid"
+          filterRes="1"
+        >
           <feFlood floodColor="white" />
           <feGaussianBlur stdDeviation="2" />
           <feComponentTransfer>

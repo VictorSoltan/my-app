@@ -76,7 +76,7 @@ export default function Header({
   return (
     <div className="header_component flex items-center justify-between shrink-0 w-[1155px] h-[87px] relative mt-8">
       <div
-        className="flex items-center justify-between bg-[#ffffff] pl-4 px-2 rounded-[1px] w-[258px] h-[45px] overflow-hidden"
+        className="flex items-center justify-between bg-[#ffffff] pl-4 px-2 rounded-[1px] w-[258px] h-[38px] overflow-hidden"
         style={{ boxShadow: '0px 4px 18px 0px rgba(75, 70, 92, 0.10)' }}
       >
         <h3
@@ -118,7 +118,7 @@ export default function Header({
           </label>
           <button
             onClick={() => toggleDropdown(index, !item.dropDownActive)}
-            className="flex items-center justify-between bg-white border  w-[213px] h-[38px] pl-[5px] pr-[15px] overflow-hidden"
+            className="flex items-center justify-between bg-white border w-[213px] h-[38px] pl-[5px] pr-[15px] overflow-hidden"
             style={{
               border:
                 'solid var(--light-solidcolor-primary-primary-500-base-, #4078bc)',
@@ -176,7 +176,7 @@ export default function Header({
       {buttons.map((item, index) => (
         <button
           key={index}
-          className="flex items-center justify-center w-[38px] h-[38px] rounded-[3px]"
+          className="flex header_buttons  items-center justify-center w-[38px] h-[38px] rounded-[3px]"
           style={{
             border: '1px solid #4078bc',
             font: "var(--button-buttonmd, 500 14px 'Montserrat', sans-serif)",

@@ -14,6 +14,7 @@ export default function PieWidget() {
   }
 
   useEffect(() => {
+    console.log('pieWidget');
     setData({
       mainTitle: 'Userfeedback (Antworten)',
       chartData: [
@@ -44,7 +45,7 @@ export default function PieWidget() {
   return (
     data && (
       <div
-        className="donut bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-4 w-[32%] h-[383px] relative"
+        className="donut bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-2 w-[32%] h-[383px] relative"
         style={{
           boxShadow:
             'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
@@ -74,11 +75,8 @@ export default function PieWidget() {
                 fontSize: '10px',
                 background: 'white',
                 fill: 'black',
-                width: '100px',
-                height: '100px',
                 fontWeight: '800',
                 filter: 'url(#solid)',
-                color: 'white',
               }}
               lengthAngle={360}
               paddingAngle={0}

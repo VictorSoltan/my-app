@@ -48,7 +48,7 @@ export default function XBarChart({ width }: { width: string }) {
   const [dropDown, setDropDown] = useState(false);
   return (
     <div
-      className="bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-4 w-[1155px] h-[383px] relative"
+      className="bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-2 w-[1155px] h-[383px] relative"
       style={{
         width: width,
         boxShadow:
