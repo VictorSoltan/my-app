@@ -1,19 +1,25 @@
+import Img from './Frame24.svg';
+
 export default function SvgLabel() {
   return (
     <div className="absolute h-0">
-      <svg width="800px" height="600px">
+      <svg
+        style={{
+          filter: 'drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4))',
+        }}
+      >
         <defs>
-          <filter id="solid" x="-5%" width="110%" y="0%" height="100%">
-            <feFlood flood-color="#FFAA55" />
-            <feGaussianBlur stdDeviation="2" />
-            <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 0 0 1" />
-            </feComponentTransfer>
-
-            <feComponentTransfer>
-              <feFuncA type="table" tableValues="0 1 1 1 1 1 1 1" />
-            </feComponentTransfer>
+          <filter id="solid" primitiveUnits="objectBoundingBox">
+            <feImage
+              preserveAspectRatio="none"
+              width="120%"
+              height="105%"
+              x="-10%"
+              y="0%"
+              href={Img}
+            />
             <feComposite operator="over" in="SourceGraphic" />
+            <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.09" />
           </filter>
         </defs>
       </svg>
