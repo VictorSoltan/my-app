@@ -128,6 +128,7 @@ export default function SimpleWordcloud() {
     fontSizes: [20, 100],
     padding: 10,
     fontFamily: 'Public Sans',
+    deterministic: true,
   } as any;
   const [dropDown, setDropDown] = useState(false);
   return (
@@ -143,7 +144,7 @@ export default function SimpleWordcloud() {
         dropDownActive={dropDown}
         setDropDown={setDropDown}
       />
-      <div className="mt-2">
+      <div className="mt-2 px-12">
         <ReactWordcloud words={words} options={options} />
       </div>
     </div>

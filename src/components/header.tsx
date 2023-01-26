@@ -80,23 +80,34 @@ export default function Header({
         style={{ boxShadow: '0px 4px 18px 0px rgba(75, 70, 92, 0.10)' }}
       >
         <h3
-          className="text-primary absolute"
-          style={{
-            font: "600 18px/24px 'Public Sans', sans-serif",
-          }}
-        >
-          <CountUp end={215} duration={2.4} />
-        </h3>
-
-        <h3
           className="text-secondary justify-start items-start w-full"
           style={{
             font: "400 18px/20px 'Public Sans', sans-serif",
           }}
         >
           <div className="text-box flex justify-start items-center relative">
-            <div>Today's conversations</div>
-            <div>Live Conversations</div>
+            <div className="flex items-center">
+              <h3
+                className="text-primary mr-2 w-7"
+                style={{
+                  font: "600 18px/24px 'Public Sans', sans-serif",
+                }}
+              >
+                <CountUp end={125} duration={2.4} />
+              </h3>
+              Today's conversations
+            </div>
+            <div className="flex items-center">
+              <h3
+                className="text-primary mr-2 w-7"
+                style={{
+                  font: "600 18px/24px 'Public Sans', sans-serif",
+                }}
+              >
+                <CountUp end={215} duration={2.4} />
+              </h3>
+              Live Conversations
+            </div>
           </div>
         </h3>
 

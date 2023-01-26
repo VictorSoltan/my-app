@@ -63,9 +63,9 @@ export default function Dropdown({
         onClick={() => setCalendar(true)}
         className={`${
           selectedRange !== '' && selectedRange === selectedDate
-            ? 'bg-[#e8eff7] text-[#4078BC]'
-            : 'text-[#6E6B7B]'
-        } dropdownElem text-center absolute h-[42px] w-[189px] flex items-center justify-center`}
+            ? 'text-[#4078BC]'
+            : 'text-[#6E6B7B] '
+        } dropdownElem bg-white text-center absolute border-t-[1px] border-[#EBE9F1] h-[42px] w-[189px] flex items-center justify-center`}
         style={{
           font: "400 14px/21px 'Montserrat', sans-serif",
         }}
