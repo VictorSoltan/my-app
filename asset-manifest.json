@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.611cc133.css",
-    "main.js": "/my-app/static/js/main.5ce1d4f4.js",
+    "main.css": "/my-app/static/css/main.117a6418.css",
+    "main.js": "/my-app/static/js/main.31e41fa2.js",
     "static/js/787.28cb0dcd.chunk.js": "/my-app/static/js/787.28cb0dcd.chunk.js",
     "static/media/Gear.svg": "/my-app/static/media/Gear.e7da686945adf7059dd5bd06c6e7232b.svg",
     "static/media/ImportPdf.svg": "/my-app/static/media/ImportPdf.8b36ae51826da20c95950e72b0a8ae71.svg",
@@ -10,12 +10,12 @@
     "static/media/Clock.svg": "/my-app/static/media/Clock.f5a431e3dc51a22179d2b88ab01d6440.svg",
     "index.html": "/my-app/index.html",
     "static/media/Users.svg": "/my-app/static/media/Users.3ff110a04a5f353e2dc067957c208286.svg",
-    "main.611cc133.css.map": "/my-app/static/css/main.611cc133.css.map",
-    "main.5ce1d4f4.js.map": "/my-app/static/js/main.5ce1d4f4.js.map",
+    "main.117a6418.css.map": "/my-app/static/css/main.117a6418.css.map",
+    "main.31e41fa2.js.map": "/my-app/static/js/main.31e41fa2.js.map",
     "787.28cb0dcd.chunk.js.map": "/my-app/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.611cc133.css",
-    "static/js/main.5ce1d4f4.js"
+    "static/css/main.117a6418.css",
+    "static/js/main.31e41fa2.js"
   ]
 }
