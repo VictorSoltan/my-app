@@ -1,23 +1,10 @@
 export default function SvgLabel() {
   return (
     <div className="absolute h-0">
-      <svg
-        width="100%"
-        height="100%"
-        style={{
-          filter: 'drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4))',
-        }}
-      >
+      <svg width="800px" height="600px">
         <defs>
-          <filter
-            x="-0.2"
-            y="-0.2"
-            width="1.4"
-            height="1.4"
-            id="solid"
-            filterRes="1"
-          >
-            <feFlood floodColor="white" />
+          <filter id="solid" x="-5%" width="110%" y="0%" height="100%">
+            <feFlood flood-color="#FFAA55" />
             <feGaussianBlur stdDeviation="2" />
             <feComponentTransfer>
               <feFuncA type="table" tableValues="0 0 0 1" />
@@ -26,12 +13,7 @@ export default function SvgLabel() {
             <feComponentTransfer>
               <feFuncA type="table" tableValues="0 1 1 1 1 1 1 1" />
             </feComponentTransfer>
-            <feComposite in="SourceGraphic" />
-
-            <feMerge>
-              <feMergeNode in="bg" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
+            <feComposite operator="over" in="SourceGraphic" />
           </filter>
         </defs>
       </svg>

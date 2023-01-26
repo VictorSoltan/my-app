@@ -142,6 +142,7 @@ export default function donutWidget({ data }: { data: number }) {
                   fontSize: '10px',
                   fill: 'black',
                   fontWeight: '800',
+                  filter: 'url(#solid)',
                 }}
                 lengthAngle={360}
                 lineWidth={30}
