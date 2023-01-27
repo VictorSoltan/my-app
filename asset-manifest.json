@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-app/static/css/main.891faa46.css",
-    "main.js": "/my-app/static/js/main.741529e1.js",
+    "main.js": "/my-app/static/js/main.9dbe0661.js",
     "static/js/787.28cb0dcd.chunk.js": "/my-app/static/js/787.28cb0dcd.chunk.js",
     "static/media/KindsOfEvents.png": "/my-app/static/media/KindsOfEvents.2cd59897b5b4f9baa847.png",
     "static/media/ConversationLength.png": "/my-app/static/media/ConversationLength.1bfabf38784c681cba65.png",
@@ -16,11 +16,11 @@
     "static/media/Users.svg": "/my-app/static/media/Users.3ff110a04a5f353e2dc067957c208286.svg",
     "static/media/chartLabel.svg": "/my-app/static/media/chartLabel.ae929ea80fa3a586294c0caab2fd6a2d.svg",
     "main.891faa46.css.map": "/my-app/static/css/main.891faa46.css.map",
-    "main.741529e1.js.map": "/my-app/static/js/main.741529e1.js.map",
+    "main.9dbe0661.js.map": "/my-app/static/js/main.9dbe0661.js.map",
     "787.28cb0dcd.chunk.js.map": "/my-app/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.891faa46.css",
-    "static/js/main.741529e1.js"
+    "static/js/main.9dbe0661.js"
   ]
 }
