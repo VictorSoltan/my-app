@@ -133,7 +133,7 @@ export default function SimpleWordcloud() {
   const [dropDown, setDropDown] = useState(false);
   return (
     <div
-      className="bg-light-solidcolor-extra-cardbackground rounded-[12px] shrink-0 mt-4 w-[1155px] h-[383px] relative"
+      className="bg-white rounded-[12px] shrink-0 mt-4 w-[1155px] h-[383px] relative"
       style={{
         boxShadow:
           'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',

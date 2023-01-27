@@ -35,7 +35,7 @@ export default function Statistics() {
 
   return (
     <div
-      className="bg-light-solidcolor-extra-cardbackground rounded-md shrink-0 mt-4 w-[1155px] h-[134px] relative"
+      className="bg-white rounded-md shrink-0 mt-4 w-[1155px] h-[134px] relative"
       style={{
         boxShadow:
           'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',

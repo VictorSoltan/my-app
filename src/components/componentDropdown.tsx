@@ -13,8 +13,7 @@ export default function ReffererDropdownSelect({
           : 'opacity-0 invisible pointer-events-none'
       }  w-[213px] absolute right-0 top-8 z-10 transition-all duration-300 `}
       style={{
-        boxShadow:
-          'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
+        boxShadow: '0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
       }}
     >
       {['Edit', 'Remove', 'Export CSV', 'Export PDF', 'Export PNG'].map(

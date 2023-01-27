@@ -51,8 +51,7 @@ export default function MultipleDropdown({
           : 'opacity-0 invisible pointer-events-none'
       } " absolute top-10 left-0 w-[189px] h-[200px] transition-all duration-500 z-10`}
       style={{
-        boxShadow:
-          'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
+        boxShadow: '0px 4px 18px 0px rgba(75, 70, 92, 0.10))',
       }}
     >
       {referrers.map((item, index) => (

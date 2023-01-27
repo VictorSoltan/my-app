@@ -104,7 +104,7 @@ export default function KindsOfEvents() {
   document.addEventListener('mouseover', handleMouseEvent);
   return (
     <div
-      className="kinds bg-light-solidcolor-extra-cardbackground shrink-0 mt-4 w-[1155px] h-[383px] relative"
+      className="kinds bg-white shrink-0 mt-4 w-[1155px] h-[383px] relative"
       style={{
         boxShadow:
           'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',

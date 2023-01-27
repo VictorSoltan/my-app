@@ -5,7 +5,7 @@ export default function AddWidget() {
   const [widgetCenter, setWidgetCenter] = useState<boolean>(false);
   return (
     <div
-      className="flex flex-col items-center justify-center border-[3px] w-[1150px] h-[355px] mt-10 mb-12"
+      className="flex flex-col items-center justify-center border-[3px] w-[1150px] h-[355px] mt-4 mb-12"
       style={{ border: 'dashed #4078bc' }}
     >
       <svg

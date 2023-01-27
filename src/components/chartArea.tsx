@@ -152,7 +152,7 @@ export default function ChartArea({
 
   return (
     <div
-      className="bg-light-solidcolor-extra-cardbackground shrink-0 mt-4 relative"
+      className="bg-white shrink-0 mt-4 relative"
       style={{
         width: width,
         height: height,
