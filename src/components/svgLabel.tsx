@@ -1,8 +1,8 @@
-import Img from './Frame24.svg';
+import Img from '../assets/chartLabel.svg';
 
 export default function SvgLabel() {
   return (
-    <div className="absolute h-0">
+    <div className="absolute top-0 h-0">
       <svg
         style={{
           filter: 'drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4))',

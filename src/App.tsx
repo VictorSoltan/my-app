@@ -15,6 +15,10 @@ import DonutWidget from './components/donutWidget';
 import XBarChart from './components/xBarChart';
 import PieWidget from './components/pieWidget';
 
+import DonutChartPlate from './components/donutChartPlate';
+import DonutChartDropdown from './components/donutChartDropdown';
+import PieChartScroll from './components/pieChartScroll';
+
 import AddWidget from './components/addWidget';
 
 import CalendarPopUp from './components/calendarPopUp';
@@ -80,6 +84,16 @@ function App() {
         <div className="flex justify-between w-full">
           <XBarChart width={'66%'} />
           <PieWidget />
+        </div>
+      ),
+      height: 420,
+    },
+    {
+      component: (
+        <div className="flex justify-between w-full">
+          <DonutChartPlate />
+          <DonutChartDropdown />
+          <PieChartScroll />
         </div>
       ),
       height: 420,

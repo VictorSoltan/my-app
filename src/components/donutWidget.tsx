@@ -147,6 +147,7 @@ export default function donutWidget({ data }: { data: number }) {
                 lengthAngle={360}
                 lineWidth={30}
                 paddingAngle={0}
+                reveal={animation ? 100 : 0}
               />
             )}
             <div className="absolute top-[27.5%] border-[1px] border-[#D9E1E7] rounded-[100%] p-[20%] flex flex-col justify-center items-center w-[80px] h-[80px]">

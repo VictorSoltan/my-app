@@ -1,4 +1,8 @@
+import { useState } from 'react';
+import WidgetCenter from './widgetCenter';
+
 export default function AddWidget() {
+  const [widgetCenter, setWidgetCenter] = useState<boolean>(false);
   return (
     <div
       className="flex flex-col items-center justify-center border-[3px] w-[1150px] h-[355px] mt-10 mb-12"
@@ -6,6 +10,7 @@ export default function AddWidget() {
     >
       <svg
         className="relative overflow-visible cursor-pointer"
+        onClick={() => setWidgetCenter(true)}
         style={{}}
         width="65"
         height="65"
@@ -26,6 +31,10 @@ export default function AddWidget() {
       >
         WIDGET HINZUFÜGEN
       </h1>
+      <WidgetCenter
+        widgetCenter={widgetCenter}
+        setWidgetCenter={setWidgetCenter}
+      />
     </div>
   );
 }
