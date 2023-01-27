@@ -73,7 +73,7 @@ export default function PieChartScroll() {
   return (
     data && (
       <div
-        className="donut bg-white rounded-md shrink-0 w-[32%] h-[383px] relative"
+        className="donut bg-white shrink-0 w-[32%] h-[383px] relative"
         style={{
           boxShadow:
             'var(--light-gray-card-box-shadow,  0px 4px 18px 0px rgba(75, 70, 92, 0.10))',

@@ -47,9 +47,12 @@ export default function ComponentHeader({
       </h3>
       <span
         onClick={toggleDropdown}
-        className={`${
-          dropDownActive ? 'bg-white' : ''
-        } dropdown flex flex-col items-center justify-between mt-2 py-[7px] h-[32px] w-[32px] relative transition-all duration-300 cursor-pointer`}
+        className={`dropdown flex flex-col items-center justify-between mt-2 py-[7px] h-[32px] w-[32px] relative transition-all duration-300 cursor-pointer`}
+        style={{
+          boxShadow: dropDownActive
+            ? '0px 8px 14px 2px rgba(75, 70, 92, 0.14)'
+            : '',
+        }}
       >
         {[0, 1, 2].map((item) => (
           <div

@@ -19,7 +19,7 @@ export default function SvgLabel() {
               href={Img}
             />
             <feComposite operator="over" in="SourceGraphic" />
-            <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.09" />
+            <feDropShadow dx="0" dy="0" stdDeviation="2" floodOpacity="0.14" />
           </filter>
         </defs>
       </svg>
